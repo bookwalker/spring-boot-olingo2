@@ -1,0 +1,85 @@
+{
+	"info": {
+		"name": "OData",
+		"_postman_id": "830ca6fd-b358-7c5d-aee9-f19cee5cf999",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/odata/v2/$metadata",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/odata/v2/$metadata",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"odata",
+						"v2",
+						"$metadata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/odata/v2/Contacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/odata/v2/Contacts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"odata",
+						"v2",
+						"Contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/odata/v2/Contacts?$filter=startswith(tolower(Name), tolower('John'))",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/odata/v2/Contacts?$filter=startswith(tolower(Name), tolower('John'))",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"odata",
+						"v2",
+						"Contacts"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "startswith(tolower(Name), tolower('John'))",
+							"equals": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

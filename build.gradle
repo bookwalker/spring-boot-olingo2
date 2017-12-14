@@ -1,0 +1,40 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.9.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+ext {
+    vOlingo = '2.0.10';
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compileOnly('org.projectlombok:lombok')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.apache.olingo:olingo-odata2-api:' + vOlingo)
+    compile('org.apache.olingo:olingo-odata2-lib:' + vOlingo)
+    compile('org.apache.olingo:olingo-odata2-core:' + vOlingo)
+    compile('org.apache.olingo:olingo-odata2-jpa-processor-core:' + vOlingo)
+    runtime('com.h2database:h2')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
